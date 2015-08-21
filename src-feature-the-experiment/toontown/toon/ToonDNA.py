@@ -1964,8 +1964,11 @@ defaultBoyColorList = [0,
  21,
  22,
  23,
- 24]
-defaultGirlColorList = [1,
+ 24,
+ 25,
+ 26]
+defaultGirlColorList = [0,
+ 1,
  2,
  3,
  4,
@@ -1988,7 +1991,9 @@ defaultGirlColorList = [1,
  21,
  22,
  23,
- 24]
+ 24,
+ 25,
+ 26]
 allColorsListApproximations = map(lambda x: VBase4(round(x[0], 3), round(x[1], 3), round(x[2], 3), round(x[3], 3)), allColorsList)
 allowedColors = set(map(lambda x: allColorsListApproximations[x], set([0] + defaultBoyColorList + defaultGirlColorList + [26])))
 HatModels = [None,
@@ -2831,9 +2836,12 @@ class ToonDNA(AvatarDNA.AvatarDNA):
             return allColorsList[0]
 
     def getBlackColor(self):
-		return allColorsList[26]
- 
-	def getWhiteColor(self):
+        try:
+            return allColorsList[26]
+        except:
+            return allColorsList[0]
+
+    def getWhiteColor(self):
         return allColorsList[0]
 
     def setTemporary(self, newHead, newArmColor, newLegColor, newHeadColor):
