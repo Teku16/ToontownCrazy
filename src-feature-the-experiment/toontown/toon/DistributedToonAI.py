@@ -4621,7 +4621,7 @@ def name(name=''):
     if name:
         return "Set %s's name to %s!" % (_name, name)
     else:
-        return "%s's name is now empty!" % _name
+        return "%s's name is now blank!" % _name
 
 @magicWord(category=CATEGORY_CREATIVE, types=[int, int])
 def hat(hatIndex, hatTex=0):
@@ -5035,7 +5035,7 @@ def givePies(pieType, numPies=0):
     target = spellbook.getTarget()
     if pieType == -1:
         target.b_setNumPies(0)
-        return "Removed %s's pies." % target.getName()
+        return "Gave infinite pies too %s." % target.getName()
     if pieType == 6:
         return 'Invalid pie type!'
     if not 0 <= pieType <= 7:
