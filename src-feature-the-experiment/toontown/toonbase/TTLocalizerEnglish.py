@@ -29,8 +29,7 @@ NametagFonts = (
     'phase_3/models/fonts/Danger.bam',
     'phase_3/models/fonts/Alie.bam',
     'phase_3/models/fonts/OysterBar.bam',
-    'phase_3/models/fonts/RedDogSaloon.bam',
-	'phase_3/models/fonts/Magical.ttf'
+    'phase_3/models/fonts/RedDogSaloon.bam'
 )
 NametagFontNames = (
     'Default',
@@ -47,8 +46,7 @@ NametagFontNames = (
     'Action',
     'Poetic',
     'Boardwalk',
-    'Western',
-	'Magical'
+    'Western'
 )
 NametagLabel = ' Nametag'
 UnpaidNameTag = 'Basic'
@@ -7632,7 +7630,7 @@ NPCToonNames = {20000: 'Tutorial Tom',
 # Start with 91913.
 91917: 'Magic Cat',
 91918: 'Trap Cat',
-91919: 'Prof. Moochtopher'}
+91919: 'Octowoof'}
 zone2TitleDict = {2513: ('Toon Hall', ''),
  2514: ('Toontown Bank', ''),
  2516: ('Toontown School House', ''),
@@ -9804,16 +9802,16 @@ InteractivePropTrackBonusTerms = {0: 'Super Toon-Up!',
  6: ''}
 PlayingCardUnknown = 'Card Name is unknown'
 YinTitle = 'Are you absolutely sure?'
-YinNotCat = 'Sorry, I only make dogs black.'
+YinNotCat = 'Sorry, I only make cats black.'
 YinAlreadyBlack = "You're already black!"
-YinPickColor = 'Are you sure you want to be a black dog?'
-YinEnjoy = 'Enjoy! You are now permanently a black dog.'
+YinPickColor = 'Are you sure you want to be a black cat?'
+YinEnjoy = 'Enjoy! You are now permanently a black cat.'
 YinGoodbye = 'Okay, then. See you later!'
 YangTitle = 'Are you absolutely sure?'
-YangNotBear = 'Sorry, I only make cats white.'
+YangNotBear = 'Sorry, I only make bears white.'
 YangAlreadyWhite = "You're already white!"
-YangPickColor = 'Are you sure you want to be a white cat?'
-YangEnjoy = 'Enjoy! You are now permanently a white cat.'
+YangPickColor = 'Are you sure you want to be a polar bear?'
+YangEnjoy = 'Enjoy! You are now permanently a polar bear.'
 YangGoodbye = 'Okay, then. See you later!'
 
 # Buffs

@@ -2,7 +2,7 @@
 <html>
 <head>
 <style>
-#username {
+#absolute {
 position: absolute;
 border: none;
 top: 453px;
@@ -26,20 +26,20 @@ background: url(assets/PLAY_NORMAL.jpg);
 #submit:hover {
 background: url(assets/PLAY_ROLLOVER.jpg);
 }
-.password {
+<!--#absolute1 {
 position: absolute;
 border: none;
-top: 500px;
-left: 64.3%;
-margin-left:-200px;
-width: 1250px;
-}
+top: 525;
+left: 50%;
+margin-left:-250px;
+width: 500px;
+}-->
 </style>
 <title>Toontown Crazy</title>
 <HTA:APPLICATION
 border="thin"
 borderStyle="normal"
-caption="no"
+caption="yes"
 icon="http://www.website.com/favicon.ico"
 maximizeButton="no"
 minimizeButton="no"
@@ -49,19 +49,23 @@ innerBorder="no"
 NAVIGATABLE="no"
 scroll="no"
 scrollFlat="no" 
-SysMenu="no" 
-singleinstance="yes" />
+SysMenu="no" />
 
 </head>
 <body background="assets/BACKGROUND.jpg">
 
-<div class="wrapper">
-	<div id="username"><input type="text" name="username" size="30"></div>
+<div id="absolute">
+<input type="text" name="username" size="30">
 </div>
 
 <button type="image" name="run_button" onClick="Launch()" value="Go" id="submit" class="btn btn-primary btn-success"> </button>
 
-<input type="password" name="password" id="password" size="30">
+<!-- SAVE THIS FOR WHEN WE ACTUALLY HAVE PASSWORDS<div id="absolute1">
+<form action="action_page.php">
+<input type="text" name="password" value="">
+</form>
+</div>-->
+
 </body>
 <script Language="VBScript">
 	Sub Window_Onload
@@ -69,20 +73,16 @@ singleinstance="yes" />
 	End Sub
 </script>
 <script Language="VBScript">
-    Sub Launcher
-        Dim objShell
+Function Launch()
+		TTI_PLAYCOOKIE = username.Value
         set objShell = CreateObject ( "WScript.Shell" )
         set sysenv = objShell.Environment ( "PROCESS" )
-	    sysenv("TTI_PLAYCOOKIE") = username.Value&":"&password.Value
-        sysenv("TTI_GAMESERVER") = "108.67.132.207 "
+	    sysenv("TTI_PLAYCOOKIE") = username.Value
+        sysenv("TTI_GAMESERVER") = "127.0.0.1"
         objShell.currentDirectory = objShell.currentDirectory&"\.."
-        objShell.Run("C:/Panda3D-1.9.0/python/ppython.exe -m toontown.toonbase.ToontownPlanetStart")
-		Set objFileToWrite = CreateObject("Scripting.FileSystemObject").OpenTextFile("test.txt",2,true)
-        objFileToWrite.WriteLine("password.Value")
-		objFileToWrite.Close
-		Set objFileToWrite = Nothing
+        objShell.Run("C:/Panda3D-1.9.0/python/ppython.exe -m toontown.toonbase.ClientStart")
         set objShell = Nothing
         Me.Close
-    End Sub
+	End Function
 </script>
 </html>
